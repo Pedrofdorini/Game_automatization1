@@ -4,6 +4,7 @@ import pyautogui
 import webbrowser
 import time
 
+
 def capturar_imagem():
     # Obter as coordenadas do local de captura
     x = 542  # coordenada x do canto superior esquerdo
@@ -54,7 +55,7 @@ def aguardar_tempo(tempo):
     print("Temporizador concluído!")
 
 
-def localizar_robo():
+def localizar_clicar():
     while True:
         # Procurar a imagem na tela
         time.sleep(3)
@@ -108,19 +109,33 @@ def verificar_imagem(nome_arquivo):
 # Exemplo de uso
 id_jogo = 767560
 abrir_steam_jogo(id_jogo)
+#abriu o jogo
 nome_arquivo="Atualizar.png"
 verificar_imagem(nome_arquivo)
-localizar_robo()
+#vai achar o atualizar e fica na tela inicial
+localizar_clicar()
 print("robo localizado")
+#abrir o harpy
+pyautogui.click(x=1616, y=571)
+pyautogui.click(x=1567, y=652)
+
 pyautogui.click(59,591)
 time.sleep(2)
 pyautogui.click(1718,1017)
 time.sleep(2)
+#verificar se já é possível botar os fragmentos
+
 # Capturar a imagem
+
 capturar_imagem()
 
 # Carregar a imagem capturada
 imagem = Image.open('imagem.png')
 tempo = pytesseract.image_to_string(imagem)
-aguardar_tempo(tempo)
+oficina=aguardar_tempo(tempo)
+ #volta para tela inicial
+pyautogui.click(x=1867, y=39)
+
+#clicar no robô harpy e checar o tempo faltando
+
 
