@@ -1,3 +1,38 @@
 A posição do primeiro clique é Point(x=908, y=163)
 A posição do segundo clique é Point(x=1007, y=195)
 Diferença: (99, 32)
+
+def verificar_imagem_aprimorar(imagem):
+    for i in range(3):
+    # procurar imagem aprimorar na tela
+       imagem_aprimorar= pyautogui.locateOnScreen("Aprimorar.png",grayscale=True, confidence=0.8)
+       if imagem_aprimorar is not None:
+          return True
+       else:
+          time.sleep(2)
+    print("A imagem 'Aprimorar.png' não foi encontrada após 3 tentativas.")
+    return False
+
+ imagem="Aprimorar.png"
+
+ if verificar_imagem_aprimorar(imagem):
+    time.sleep(2)
+    pyautogui.click(1615,569)
+    time.sleep(2)
+    pyautogui.click(1633,392)
+    time.sleep(2)
+    pyautogui.click(148,364)
+    time.sleep(2)
+    pyautogui.click(1184,1006)
+    time.sleep(2)
+    pyautogui.click(1019,1013)
+    time.sleep(2)
+    pyautogui.click(1864,50)
+    time.sleep(2)
+    pyautogui.click(1868,33)
+ else:
+    pass
+imagem1 = capturar_imagem("imagem1.png", 908, 163, 99, 32)
+ imagem1 = Image.open("imagem1.png")
+ imagem_texto1 = pytesseract.image_to_string(imagem1)
+ tempo1=converter_tempo(imagem_texto1)

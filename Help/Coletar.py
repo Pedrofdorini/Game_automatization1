@@ -11,6 +11,7 @@ nomes_imagens = []
 
 # Listar os arquivos no diretório
 arquivos_no_diretorio = os.listdir(diretorio_imagens)
+print(arquivos_no_diretorio)
 
 # Filtrar apenas os arquivos de imagem
 for arquivo in arquivos_no_diretorio:

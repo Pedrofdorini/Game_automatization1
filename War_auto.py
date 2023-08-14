@@ -6,24 +6,7 @@ import time
 import re
 import os
 
-diretorio_imagens = "C:\\Users\\User\\OneDrive\\Área de Trabalho\\Arquivos\\Python\\War robots automat\\War robots automation\\imgs"
-nomes_imagens=["Acelerar.png",
-"Acelerar Khepri.png",
-"Aprimorar.png",
-"Atualizar.png",
-"Imagem1.png",
-"Imagem2.png",
-"Imagem Esperada.png",
-"Obter.png",
-"Repetir.png",
-"Repetir Khepri.png",
-"Robo.png",
-"Roletar.png",
-"Sim.png",
-"X.png",
-"Xvermelho.png",
-"X Preto.png"]
-imagens = {nome: os.path.join(diretorio_imagens, nome) for nome in nomes_imagens}
+
 def contagem_regressiva(tempo1, tempo2):
 
     print(f"Tempo 1: {tempo1} segundos")
